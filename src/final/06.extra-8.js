@@ -53,6 +53,7 @@ function ErrorFallback({error, resetErrorBoundary}) {
     <div role="alert">
       There was an error:{' '}
       <pre style={{whiteSpace: 'normal'}}>{error.message}</pre>
+      {/* this allows us to reset the error boundary by calling handleReset */}
       <button onClick={resetErrorBoundary}>Try again</button>
     </div>
   )
@@ -77,6 +78,7 @@ function App() {
         <ErrorBoundary
           FallbackComponent={ErrorFallback}
           onReset={handleReset}
+          // resetKeys take a list of dependencies that resets the error boundary when they change
           resetKeys={[pokemonName]}
         >
           <PokemonInfo pokemonName={pokemonName} />

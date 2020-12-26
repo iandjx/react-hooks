@@ -5,7 +5,7 @@ import * as React from 'react'
 
 function Board() {
   const [squares, setSquares] = React.useState(Array(9).fill(null))
-
+  // these are derived state as much as possible use derived state
   const nextValue = calculateNextValue(squares)
   const winner = calculateWinner(squares)
   const status = calculateStatus(winner, squares, nextValue)

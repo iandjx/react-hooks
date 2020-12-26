@@ -6,6 +6,20 @@
 // getting called in React 17:
 // https://github.com/kentcdodds/react-hooks/issues/90
 
+/* 
+TLDR:
+
+1. States are initialized first. 
+2. HTML Elements are rendered next
+3. Effects are done last.
+
+Which is why, variables that rely on API responses are initially undefined
+Which is why, we initially set useRef variable to null because there is no element to point it to
+
+Parent don't care if their children re-renders. 
+If the child unmounts then the parent re-renders but the child needs to run cleanup code first
+
+*/
 import * as React from 'react'
 
 function Child() {

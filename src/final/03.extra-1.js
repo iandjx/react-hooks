@@ -32,6 +32,8 @@ function Display({animal}) {
 }
 
 function App() {
+  // FavoriteAnimal and Display both use animal state so we colocate animal state to App
+  // Name is the only using name state so we relocae that state to Name
   const [animal, setAnimal] = React.useState('')
   return (
     <form>

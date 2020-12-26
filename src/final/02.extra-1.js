@@ -6,6 +6,7 @@ import * as React from 'react'
 
 function Greeting({initialName = ''}) {
   const [name, setName] = React.useState(
+    //use anonymous function so that we dont need to unecessarily call windows.localstorage everytime
     () => window.localStorage.getItem('name') || initialName,
   )
 
